@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin-top: 10%;
+    background: #e2e7ec; /*yellow; */
+    color: black;
+    font-family: Roboto;
+    font-size: medium;
+}
+
+label[for] {
+    color: white
+}
+
+.content {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    padding: 0 40px;
+}
+
+body .alert{
+    background: #2c2c2c;
+    color: #fff;
+    font-family: Roboto;
+    font-size: large;
+}
+
+.alert__text {
+    padding: 24px;
+}
+
+/* div .page-numbers {
+    background-color: #808080;
+    color: white;
+    /* border-radius: 1px; 
+    width: 10em;
+    height: 10em;
+    border-radius: 1rem;
+    padding: 1px;
+    text-decoration: none;
+    text-align: center;
+    transition: all .6s ease;
+    font-size: large;
+} */
+
+.pagination {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 80px 0 64px;
+    /* background-image: linear-gradient(0deg,#f3f3f3,#fff); */
+    background-image: linear-gradient(#e2e7ec);  
+}
+
+.page_numbers_current {
+    display: inline-block;
+    min-width: 32px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: #00ab6b;
+    padding: 8px 12px;
+    margin-right: 4px;
+    border-radius: 1rem;
+    transition: .1s ease-in;
+}
+
+.page-numbers {
+    display: inline-block;
+    min-width: 32px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: #2c2c2c;
+    padding: 8px 12px;
+    margin-right: 4px;
+    border-radius: 1rem;
+    transition: .1s ease-in;
+}
+
+.page-numbers:hover {
+    background: #808080; /* Цвет фона под ссылкой */ 
+    color: #fff; /* Цвет ссылки */ 
+}
+
+/* .page {
+    color: #ffffff;
+    font: 15px Roboto;
+    background-color: #00ab6b;
+    margin: 0px 4px 0px 0px;
+    padding: 8px 12px;
+
+} */
+
+/*
+div[class="pagination"]{
+    background-color: #808080; 
+    color: white;
+    font-size: large;
+}
+*/
+
+div .btn {
+    display: inline-block; /*Строчно-блочный элемент*/
+    /* background: grey; Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    transition: all .6s ease;
+    width: max-content;
+    font-family: Roboto;
+    font-size: medium;
+}
+
+div .btn:hover{
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.06);
+}
+.btn__text {
+    margin-bottom: 16px;
+}
+
+.span {
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* .a {
+    background-color: transparent;
+    color: #0089ff;
+} */
