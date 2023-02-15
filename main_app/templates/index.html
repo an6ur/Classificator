@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- <label style="font-size: large;">Показано {{ count }} cтатей по категории "{{ category }}"</label> -->
+    {%for el in articles %}
+    <div class="alert alert-warning">
+        <div class="alert__text">
+                <h3>{{el.title}}</h3>
+                <p>{{el.label}}</p>
+                <p>{{el.getOriginalAuthors}}</p>
+                <!-- <p>{{el.getAuthors}}</p> -->
+                <p>{{el.date}}</p>
+                <p>{{el.getCategories}}</p>
+                <p>{{el.getKeyWords}}</p> 
+                <!-- <p>{{el.link}}</p> --> 
+                <div class="btn__text">
+                    <a href="text/{{el.id}}" class="btn">Текст статьи</a>
+                    <a href="remove/{{el.id}}" class="btn">Удалить статью</a>
+                </div>
+            
+            <!-- <button style="vertical-align: middle" type="button"> Текст статьи</button> -->
+        </div>        
+    </div>
+    {% endfor %}
+    <!-- <nav style=" position: sticky; bottom: 0;"> -->
+        <div class="pagination">
+            <div class="nav-links">
+                <!-- <span aria-current="pages" class="step-links"> -->
+                    {% if articles.has_previous %}
+                        {% if articles.number != 2 %}
+                            <a href="1" class="page-numbers">1</a>
+                        {% endif %}
+                        <a class="page-numbers" href="{{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+                    {% endif %}
+                    <!-- <span aria-current="page" class="page_numbers_current"> -->
+                    <span aria-current="page" class="page_numbers_current" href="{{ articles.number }}">{{ articles.number }}</a>
+                        <!-- <a class="page-numbers"  href="{{ articles.number }}">{{ articles.number }}</a> -->
+                        <!--<a href="{{ articles.number }}" class="page" style="box-shadow: inset 0 0 0 1px; color:white;">{{ articles.number }}</a>-->
+                    </span>
+                    {% if articles.has_next %}
+                        <a class="page-numbers" href="{{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+                        {% if articles.next_page_number != articles.paginator.num_pages %}
+                            <a class="page-numbers" href="{{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }}</a>
+                        {% endif %}
+                    {% endif %}
+                <!-- </span> -->
+            </div>
+        </div>
+    <!-- </nav> -->
+{% endblock %}
